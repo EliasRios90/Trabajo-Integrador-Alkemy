@@ -1,6 +1,6 @@
-#Proyecto Integrador de Alkemy
+# Proyecto Integrador de Alkemy
 
-##Descripción
+## Descripción
 Sistema de gestión de personas
 
 ● Listar todos los productos registrados en la base de datos.
@@ -11,36 +11,22 @@ Sistema de gestión de personas
 ● Permitir cambiar el estado de un producto.
 
 ## Instalación
-- Crear un entorno virtual: python -venv myvirtual```python
--m venv [nombreEntorno]
-```
+- Crear un entorno virtual: python -venv myvirtual```python -m venv [nombreEntorno]```
 
-- Activar el entorno virtual: ```
-[nombreEntorno]\Scripts\activate
-```
+- Activar el entorno virtual: ```[nombreEntorno]\Scripts\activate```
 
-- Instalar dependencias: ```
-pip install -r requirements.txt
-```
+- Instalar dependencias: ```pip install -r requirements.txt```
 
-- Crear la base de datos: ```
-python manage.py migrate
-```
+- Crear la base de datos: ```python manage.py migrate```
 
-- Crear un superusuario: ```
-python manage.py createsuperuser
-```
+- Crear un superusuario: ```python manage.py createsuperuser```
 
-- Ejecutar el servidor: ```
-python manage.py runserver
-```
+- Ejecutar el servidor: ```python manage.py runserver```
 
-- Ir a ```
-https://localhost:8000
-```
+- Ir a ```localhost:8000```
 
 
-##Créditos
+## Créditos
 - [Whatsapp icono creado por riajulislam](https://www.flaticon.com/free-icons/whatsapp "Whatsapp icons created by riajulislam") - Flaticon
 - [Gmail icono creado por Pixel perfect](https://www.flaticon.com/free-icons/gmail "Gmail icons created by Pixel perfect") - Flaticon
 - [Facebook icono creado por Freepik](https://www.flaticon.com/free-icons/facebook "Facebook icons created by Freepik") - Freepik
