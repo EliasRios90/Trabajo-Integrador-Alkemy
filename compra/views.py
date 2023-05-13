@@ -8,7 +8,7 @@ def inicio(request):
 
     return render(
         request,
-        "compra/inicio.html"
+        "compra/base.html"
     )
 
 
