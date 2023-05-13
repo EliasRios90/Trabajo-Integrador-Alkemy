@@ -1,0 +1,31 @@
+{% extends "compra/base.html" %}
+
+{% block title %} Proveedores {% endblock %}
+
+{% block content %}
+    <h3 class="pb-3 d-flex justify-content-center fw-bold text-body-tertiary">Lista de proveedores</h3>
+
+    <div class="p-5">
+
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">DNI</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for proveedor in listado_proveedores %}
+                    <tr>
+                        <th scope="col">{{proveedor.id}}</th>
+                        <td>{{proveedor.nombre}}</td>
+                        <td>{{proveedor.apellido}}</td>
+                        <td>{{proveedor.dni}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

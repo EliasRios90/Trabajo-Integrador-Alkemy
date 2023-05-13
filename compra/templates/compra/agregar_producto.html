@@ -1,0 +1,61 @@
+{% extends "compra/base.html" %}
+
+{% block title %} Agregar producto {% endblock %}
+
+{% block content %}
+
+  {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert"><!-- message.tags muestra el tipo de mensaje: succes, error, warning o info -->
+            <strong>
+              {% if message.tags == 'success' %} 
+                EXITO! 
+              {% else %}
+                ERROR! 
+              {% endif %}
+            </strong> 
+            {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+  {% endif %}
+
+    <h3 class="pb-3 d-flex justify-content-center fw-bold text-body-tertiary">Agregar Producto</h3>
+    
+    <div class="d-flex justify-content-center p-5 bg-info-subtle rounded-5">
+
+        <form method="post"><!-- El metodo post envia informacion a travez de un formulario -->
+            {% csrf_token %} <!-- Token que genera Django -->
+
+            <div class="form-group">
+              <label for="nombre" class="fw-semibold">Nombre:</label>
+              <input type="text" name="nombre" maxlength="20" class="mb-3 form-control">
+
+              <label for="precio" class="fw-semibold">Precio:</label>
+              <input type="number" name="precio" class="mb-3 form-control">
+              
+              <label for="stock_actual" class="fw-semibold">Stock:</label>
+              <input type="number" step="any" name="stock_actual" class="mb-3 form-control">
+
+              <div class="p-3">
+                <label for="estado" class="fw-semibold pe-3">Estado:</label>
+                <input type="checkbox" class="form-check-input" name="estado" checked class="mb-3 form-control">
+                <label id="estado_label" style="font-size: .7em;">Activo</label>
+              </div>
+
+              <label for="producto" class="fw-semibold">Proveedor:</label>
+              <select name="proveedor" class="form-select">
+                {% for proveedor in listado_proveedores %}
+                  <option value="{{proveedor.id}}">{{proveedor.nombre}} {{proveedor.apellido}}</option>
+                {% endfor %}
+              </select>
+
+              <div class="d-flex justify-content-center pt-5">
+                <input type="submit" class="btn btn-primary bg-gradient fw-bold" value="Agregar producto">
+              </div>
+            </div>
+
+          </form>
+    </div>
+    
+{% endblock %}

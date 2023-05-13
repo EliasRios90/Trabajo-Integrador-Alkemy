@@ -1,0 +1,170 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'imagenes/icono_sc.ico' %}">
+    <link  rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <title>{% block title %} {% endblock %} | Stock Control</title>
+</head>
+<body>
+    <!-- Encabezado y menu -->
+    <header class="p-3 bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+              <a href="{% url 'inicio' %}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                  <img src="{% static 'imagenes/logo.png' %}" alt="logo_stock_control" width="100">
+              </a>
+
+              <a href="{% url 'inicio' %}" class="nav-link fw-bold text-white ps-5 fs-4">Inicio</a>
+              
+              <div class="dropdown ps-5">
+                <span class="dropdown-toggle fw-bold text-white fs-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Productos
+                </span>
+                <ul class="dropdown-menu">
+                  <li><button class="dropdown-item" type="button"><a href="{% url 'productos' %}" class="nav-link">Ver listado</a></button></li>
+                  <li><button class="dropdown-item" type="button"><a href="{% url 'agrega_producto' %}" class="nav-link">Agregar producto</a></button></li>
+                </ul>
+              </div>
+              
+              <div class="dropdown ps-5">
+                <span class="dropdown-toggle fw-bold text-white fs-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Proveedores
+                </span>
+                <ul class="dropdown-menu">
+                  <li><button class="dropdown-item" type="button"><a href="{% url 'proveedores' %}" class="nav-link">Ver listado</a></button></li>
+                  <li><button class="dropdown-item" type="button"><a href="{% url 'agrega_proveedor' %}" class="nav-link">Agrega proveedor</a></button></li>
+                </ul>
+              </div>
+
+            </div>
+            
+        </div>
+    </header>
+    
+    
+    <!-- Parte principal -->
+    <main class=" container p-4">
+      
+        {% block titulo_secundario %} {% endblock %}
+        
+        {% block content %} 
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="{% static 'imagenes/1463.jpg' %}" class="card-img-top" alt="Notebook" width="90">
+              <div class="card-body">
+                <h5 class="card-title">Notebook</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, quasi ipsa. Veritatis modi necessitatibus quaerat natus rerum eaque ipsum rem velit, numquam quibusdam pariatur, nostrum assumenda voluptate, enim reprehenderit molestiae.</p>
+                <a href="http://www.freepik.com">Imagen de zlatko_plamenov - Freepik</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="{% static 'imagenes/65968_1.jpg' %}" class="card-img-top" alt="Smartphone" width="90">
+              <div class="card-body">
+                <h5 class="card-title">Smartphone</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque, alias maiores tenetur laudantium quam, quisquam quo corporis ut quia rerum, enim ducimus natus incidunt dolorum deleniti soluta recusandae ullam.</p>
+                <a href="http://www.freepik.com">Designed by rawpixel.com - Freepik</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="{% static 'imagenes/1186.jpg' %}" class="card-img-top" alt="Smart TV" width="90">
+              <div class="card-body">
+                <h5 class="card-title">Smart TV</h5>
+                <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quaerat ea cum. Nihil suscipit necessitatibus molestiae, hic, nisi fugit consequuntur at vero unde eligendi assumenda atque, voluptate eaque eveniet recusandae.</p>
+                <a href="http://www.freepik.com">Imagen de zlatko_plamenov - Freepik</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="{% static 'imagenes/365.jpg' %}" class="card-img-top" alt="Tablet" width="90">
+              <div class="card-body">
+                <h5 class="card-title">Tablet</h5>
+                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur at vero minus ut rerum accusamus culpa, quibusdam vel similique adipisci repellendus. Rerum eaque, rem asperiores ipsam repellendus minus consectetur quia.</p>
+                <a href="http://www.freepik.com">Imagen de graphiccrew - Freepik</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endblock %}
+    </main>
+    
+    
+    <!-- Pie de pagina -->
+    <footer class="bg-dark bg-gradient text-white">
+
+        <div class="container p-4">
+          <div class="row">
+
+            <div class="col-lg-6 col-md-12 mb-4">
+                <a href="{% url 'inicio' %}"  class="text-white fw-bold text-decoration-none">
+                    <img src="{% static 'imagenes/logo2.png' %}" alt="logo_stock_control" width="30">
+                    Stock Control
+                </a>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+                molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+                voluptatem veniam, est atque cumque eum delectus sint!
+              </p>
+            </div>
+
+            <div class="col-lg-6 col-md-12 mb-4">
+              <h5 class="mb-1">Contactos</h5>
+              <table class="table text-white">
+                <tbody>
+                  <tr>
+                    <td>
+                      <img src="{% static 'imagenes/whatsapp.png' %}" alt="whatsapp">
+                      Whatsapp:
+                    </td>
+                    <td>
+                      <a href="https://api.whatsapp.com/send?phone=540303456&text=Hola,%20¿cómo%20estás?" class="text-white text-decoration-none">Enviar mensaje</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="{% static 'imagenes/facebook.png' %}" alt="facebook">
+                      Facebook:
+                    </td>
+                    <td>
+                      <a href="https://facebook.com" class="text-white text-decoration-none">stock_control_oficial</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="{% static 'imagenes/gmail.png' %}" alt="gmail">
+                      Correo:
+                    </td>
+                    <td>
+                      <a href="mailto:stock_control@gmail.com" class="text-white text-decoration-none">Stock Control</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center text-white fw-bold bg-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">            
+            <p>© 2023 Copyright</p>
+        </div>
+    </footer>
+    
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <script src="{% static 'javascript/popper.min.js' %}"></script>
+    <script src="{% static 'javascript/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'javascript/funciones.js' %}"></script>
+</body>
+</html>
